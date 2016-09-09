@@ -1,4 +1,6 @@
-﻿namespace Grades
+﻿using System;
+
+namespace Grades
 {
     public class Program
     {
@@ -11,9 +13,19 @@
 
             GradeStatistics stats = book.ComputeStatistics();
 
-            System.Console.WriteLine(stats.AverageGrade);
-            System.Console.WriteLine(stats.HighestGrade);
-            System.Console.WriteLine(stats.LowestGrade);
+            WriteResult("Average", stats.AverageGrade);
+            WriteResult("Highest", (int)stats.HighestGrade);
+            WriteResult("Lowest", stats.LowestGrade);
+        }
+
+        static void WriteResult(string description, int result)
+        {
+            Console.WriteLine($"{description}: {result}");
+        }
+
+        static void WriteResult(string description, float result)
+        {
+            Console.WriteLine($"{description}: {result:F2}");
         }
     }
 }

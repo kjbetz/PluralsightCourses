@@ -6,6 +6,11 @@ namespace Grades.Tests
 {
     public class GradeBookTests
     {
+        private void AddGrades(float[] grades)
+        {
+            grades[1] = 89.1f;
+        }
+
         [Fact]
         public void ComputesHighestGrade() 
         {
