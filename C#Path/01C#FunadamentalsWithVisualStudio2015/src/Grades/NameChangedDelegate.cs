@@ -1,4 +1,4 @@
 namespace Grades
 {
-    public delegate void NameChangedDelegate(string existingName, string newName);
+    public delegate void NameChangedDelegate(object sender, NameChangedEventArgs args);
 }
