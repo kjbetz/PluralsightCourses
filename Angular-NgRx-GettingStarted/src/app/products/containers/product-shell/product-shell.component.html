@@ -1,0 +1,23 @@
+<div class='row'>
+  <div class='col-md-4'>
+    <pm-product-list
+      [errorMessage]="errorMessage$ | async"
+      [displayCode]="displayCode$ | async"
+      [products]="products$ | async"
+      [selectedProduct]="selectedProduct$ | async"
+      (checked)="checkChanged($event)"
+      (initializeNewProduct)="newProduct()"
+      (selected)="productSelected($event)"
+    ></pm-product-list>
+  </div>
+  <div class='col-md-8'>
+    <pm-product-edit
+      [errorMessage]="errorMessage$ | async"
+      [selectedProduct]="selectedProduct$ | async"
+      (addProduct)="addProduct($event)"
+      (updateProduct)="updateProduct($event)"
+      (removeProduct)="removeProduct($event)"
+      (clearProduct)="clearCurrentProduct()"
+    ></pm-product-edit>
+  </div>
+</div>
