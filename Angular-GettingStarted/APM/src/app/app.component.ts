@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'pm-root',
+  template: `
+    <mat-toolbar color='primary'>
+      <span>Acme Product Management</span>
+      <a mat-button [routerLink]="['/welcome']">Home</a><br>
+      <a mat-button [routerLink]="['/products']">Product List</a>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  `,
 })
 export class AppComponent {
-  title = 'APM';
+  pageTitle: string = 'Acme Product Management';
 }
