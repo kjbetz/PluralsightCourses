@@ -8,12 +8,15 @@
             He/she included the following message:
         </p>
 
-        <blockquote><p>{{ invitation.message }}</p></blockquote>
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">{{ invitation.message }}</p>
+            <footer class="blockquote-footer">{{ invitation.from_user }}</footer>
+        </blockquote>
 
         <form action="" method="POST">
             {% csrf_token %}
-            <button type="submit" name="accept" value="ok">Accept</button>
-            <button type="submit" name="deny" value="no">Deny</button>
+            <button type="submit" class="btn btn-default" name="deny" value="no">Deny</button>
+            <button type="submit" class="btn btn-primary" name="accept" value="ok">Accept</button>
         </form>
     </div>
 {% endblock %}

@@ -1,0 +1,19 @@
+{% if games_list %}
+  <ul class="list-group">
+  {% for game in games_list %}
+    <a class="list-group-item list-group-item-action" href="{{ game.get_absolute_url }}">
+      {{ game }}
+      {% if game.status not in 'FS' %}
+        {% if game.status == 'D' %}
+          -- Draw
+        {% elif game.status == 'W' and game.first_player %}
+          -- You won!
+        {% elif game.status == 'L' and game.second_player %}
+          -- You lost
+        {% endif %}
+      {% endif %}
+        <span class="badge">{{ game.move_set.count }}</span>
+    <a>
+  {% endfor %}
+  </ul>
+{% endif %}

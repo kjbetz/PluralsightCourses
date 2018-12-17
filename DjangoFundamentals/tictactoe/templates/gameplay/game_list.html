@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="well col-sm-6">
+    <h3>All games</h3>
+
+    {% include "player/games_list_snippet.html" with games_list=object_list %}
+  </div>
+{% endblock content %}
